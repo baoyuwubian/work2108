@@ -1,0 +1,1 @@
+{"version":3,"sources":["logo.less"],"names":[],"mappings":"AAAA,eAKA,YAJC,WAAA,wCAAA,UACA,gBAAA","file":"../less/logo.css","sourcesContent":["i.bigcar.volvo{\r\n\tbackground: url('../img/logovolovo.png') no-repeat;\r\n\tbackground-size: cover;\r\n}\r\n\r\ni.car.volvo{\r\n\tbackground: url('../img/logovolovo.png') no-repeat;\r\n\tbackground-size: cover;\r\n}"]}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="../lib/flexible.js"></script>
+    <script src="../lib/echarts/echarts.min.js"></script>
+    <link rel="stylesheet" href="css/src/newcar.min.css">
+</head>
+<body>
+	<header>
+		<h2>集团新车进店台次</h2>
+	</header>
+	<nav>
+		<li class="on">日报表</li>
+		<li>月报表</li>
+		<li>年报表</li>
+	</nav>
+	<!-- <div class="newcartitle">新车进店台次趋势（日）</div> -->
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 100%;height:400px;margin-top: 20px"></div>
+    <footer>
+    	<a href="#">大区排名</a>
+    	<a href="#">全国门店排名（T10）</a>
+    </footer>
+
+
+
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 指定图表的配置项和数据
+        var option = {
+		    title: {
+		        text: '新车进店台次趋势（日）'
+		    },
+		    tooltip : {
+		        trigger: 'axis',
+		        axisPointer: {
+		            type: 'cross',
+		            label: {
+		                backgroundColor: '#6a7985'
+		            }
+		        }
+		    },
+		    legend: {
+		       // data:['邮件营销']
+		    },
+		    toolbox: {
+		        feature: {
+		        	dataZoom: {
+		                yAxisIndex: 'none'
+		            },
+		        	magicType : {show: true, type: ['line', 'bar']},
+            		restore : {show: true},
+		            saveAsImage: {}
+		        }
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '10%',
+		        containLabel: true
+		    },
+		    dataZoom: [{
+		        type: 'inside',
+		        start: 0,
+		        end: 60
+		    }, {
+		        start: 0,
+		        end: 60,
+		        handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+		        handleSize: '80%',
+		        handleStyle: {
+		            color: '#fff',
+		            shadowBlur: 3,
+		            shadowColor: 'rgba(0, 0, 0, 0.6)',
+		            shadowOffsetX: 2,
+		            shadowOffsetY: 2
+		        }
+		    }],
+		    xAxis : [
+		        {
+		            type : 'category',
+		            boundaryGap : false,
+		            data : ['周一','周二','周三','周四','周五','周六','周日'],
+		            axisLine: {onZero: false}
+		        }
+		    ],
+		    yAxis :{
+		            type : 'value',
+		            nameLocation:'start',
+		            boundaryGap: [0, '100%']
+		    },
+		    series : [
+		        {
+		            name:'邮件营销',
+		            type:'line',
+		            stack: '总量',
+		            lineStyle:{
+		            	normal: {
+		            		color:'#09f'
+		            	}
+		            },
+		            itemStyle:{
+		            	normal: {
+		            		color:'#09f'
+		            	}
+		            },
+		            smooth:true,
+		            symbol: 'none',
+		            sampling: 'average',
+		            itemStyle: {
+		                normal: {
+		                    color: 'rgb(255, 70, 131)'
+		                }
+		            },
+		            areaStyle: {
+		            	normal: {
+		            		color: {
+							    type: 'linear',
+							    x: 0,
+							    y: 0,
+							    x2: 0,
+							    y2: 1,
+							    colorStops: [{
+							        offset: 0, color: '#D0EDFF' // 0% 处的颜色
+							    }, {
+							        offset: 1, color: '#F2FBFF' // 100% 处的颜色
+							    }],
+							    globalCoord: false // 缺省为 false
+							}
+
+			            }
+			        },
+		            data:[120, 132, 101, 134, 90, 230, 210],
+		            label: {
+		                normal: {
+		                    show: true,
+		                    position: 'top'
+		                }
+		            },
+
+		        }
+		    ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        myChart.on('click', function (params) {
+		    //alert("你点我干嘛？");
+		    console.log(params);
+		});
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@import 'base.less';
+header{
+	position: relative;
+	padding:30/@view-base;
+	background: linear-gradient(to bottom, #1BB0FC 0%,#25C3FA 100%);
+	h2{
+		text-align: center;
+		.font-dpr(36px);
+		color: #fff;
+	}
+	.arrow{
+		position: absolute;
+		top:50%;
+		left:20/@view-base;
+		width: 20/@view-base;
+		height: 20/@view-base;
+		transform-origin:50% 50%;
+		transform: translateY(-50%) rotate(45deg);
+		//background-color: #f00;
+		border-left:2px solid #fff;
+		border-bottom:2px solid #fff;
+	}
+}
