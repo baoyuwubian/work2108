@@ -1,0 +1,155 @@
+@import 'base.less';
+@import 'header.less';
+
+body{
+	background-color: #FBFDFF;
+}
+.person{
+	position: relative;
+	margin: 0 200px;
+	
+	.font-dpr(14px);
+	.person-left{
+		float: left;
+		width: 230px;
+		min-height: 700px;
+		background-color: #41444B;
+		li{
+			padding-bottom:15px;
+			text-align: center;
+			color: #fff;
+			box-sizing: border-box;
+			&.on{
+				border-left: 5px;
+			}
+		}
+		.head{
+			width: 140px;
+			text-align: center;
+			margin: 0 auto;
+			padding: 30px 0;
+			position: relative;
+			color: #A1A8B2;
+			.ion{ 
+				position: absolute;
+				top:50%;
+				left:0;
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				
+				background: url('../img/person.png') no-repeat;
+				background-size: contain;
+				transform: translateY(-50%);
+			}
+			.arrow{
+				position: absolute;
+				top:50%;
+				right: 0;
+
+				display: inline-block;
+				width: 0;
+				height: 0;
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				border-bottom: 8px solid #fff;
+				transform: translateY(-50%) rotate(180deg);
+			}
+			&.on{
+				i{
+					transform: translateY(-50%) rotate(0deg);
+				}
+			}
+		}
+	}
+	.person-right{
+		min-height: 700px;
+		margin-top: 20px;
+		margin-left: 250px;
+		border:1px solid #ECF0F4;
+		background-color: #fff;
+	}
+	.baseinfo{
+		//padding-left: 35px;
+		.title{
+			padding:20px 0;margin-left: 35px;
+			position: relative;
+			font-weight: 700;
+			&:after{
+				position: absolute;
+				top:50%;
+				left:-20px;
+				content:'●';
+				transform: translateY(-50%);
+				color: #3F82F7;
+			}
+		}
+		dl{
+			padding-left: 36px;
+		}
+		dt{
+			//padding:12px 0;
+			padding-bottom: 20px;
+
+		}
+		dd{
+			text-indent: 1em;
+			padding-bottom: 20px;
+			span{
+				&:last-child{
+					width: 80px;
+				text-align:justify
+				}
+				&:last-child{
+					padding-left: 30px;
+				}
+				
+			}
+
+		}
+	}
+	.password{
+		.title{
+			padding:20px 0;margin-left: 35px;
+			position: relative;
+			font-weight: 700;
+			&:after{
+				position: absolute;
+				top:50%;
+				left:-20px;
+				content:'●';
+				transform: translateY(-50%);
+				color: #3F82F7;
+			}
+		}
+		div.item{
+			padding-bottom: 30px;
+			padding-left: 36px;
+		}
+		label{
+			width: 110px;
+			vertical-align: middle;
+			color: #444;
+			display: inline-block;
+			
+		}
+		input{
+			width: 280px;
+			padding-left: 20px;
+			height: 30px;
+			line-height: 30px;
+			border:1px solid #CBD2D9;
+		}
+		.but{
+			width: 270px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background-color: #3F82F7;
+			color: #fff;
+			margin-left: 80px;
+			border-radius: 6px;
+		}
+	}
+
+}
