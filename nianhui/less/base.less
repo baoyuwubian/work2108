@@ -1,0 +1,34 @@
+@baseFontSize: 75;//基于视觉稿横屏尺寸/100得出的基准font-size
+@view-base:75rem;
+.font-dpr(@font-size){
+  font-size: ceil(@font-size/2);
+
+  [data-dpr="2"] & {
+    font-size: @font-size;
+  }
+  [data-dpr="3"] & {
+    font-size: ceil(@font-size /2* 3);
+  }
+}
+
+.height-dpr(@font-size){
+  height: @font-size;
+  [data-dpr="2"] & {
+    height: @font-size;
+  }
+  [data-dpr="3"] & {
+    height: @font-size /2* 3;
+  }
+}
+body,html{
+  background-color: #fff;
+  position: relative;
+}
+h1, h2, h3, h4, h5, h6{font-weight: normal;}
+.clear:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clear{zoom:1;}
+.pos-r{
+  position: relative;
+}
+.hide{display: none}
+a,a:hover{ text-decoration: none;}

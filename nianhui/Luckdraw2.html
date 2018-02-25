@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>2018中鑫之宝幸运员工抽奖</title>
+
+<link rel="stylesheet" href="css/src/draw.min.css">
+
+</head>
+<body>
+	<div class="luck-back">
+		<div class="Outside">
+
+		</div>
+	</div>
+
+
+
+
+<script src="js/jquery.js" type="text/javascript"></script>
+<script>
+$(function () {
+	var Outside=[
+		{
+			'prize':'特等奖','num':1
+		},
+		{
+			'prize':'一等奖','num':1
+		},
+		{
+			'prize':'二等奖','num':14
+		},
+		{
+			'prize':'三等奖','num':25
+		},
+		{
+			'prize':'幸运奖','num':10
+		}
+	]
+	var html='';
+	var prizeOrder=0;
+	var Participant=100;
+	for (var i = 0; i < Outside.length; i++) {
+		html +='<dl><dt>'+Outside[i].prize+'</dt><dt>'
+		var num= Outside[i].num;
+		prizeOrder +=num;
+		for (var k = 0; k < num; k++) {
+			html +='<dd class="item">孙宝玉玉（86895）</dd>'
+		}
+		html +='</dt></dl>';
+	}
+	$('.Outside').append(html);
+	var isrun=false;
+
+
+	$(document).keydown(function(e){
+		if(!e) var e = window.event;
+		if(e.keyCode==32){// 空格暂停
+			if(isrun){
+				stop();
+			}
+		}
+		if(event.keyCode==13){//enter 回车进入
+			isrun=true;
+			startNum();
+
+		}
+	});
+	// 循环参加名单Circular list
+	function startNum() {
+		bb(prizeOrder,Participant);
+		console.log(a);
+		prizeWinning=a;
+		for (var i = 0; i < prizeOrder; i++) {
+			$('dd').eq(i).html(Participant[a[i]].c_name+'('+Participant[a[i]].c_depart+')');
+		}
+		Circular = setTimeout(startNum, 40);
+	}
+
+	// 停止跳动
+	function stop() {
+		pcount = Participant.length-1;
+		clearInterval(Circular);
+	}
+
+	var a=[0];
+	function aa(number){
+		var z=false
+		var num=number;
+		for(var i=0;i< a.length;i++){
+			if(a[i]==num){
+				z=true;
+			}
+		}
+		return z;
+	}
+	function bb(m,n){
+		if(m>n){
+			alert("你输入的范围不对，请重新输入");
+		}else {
+			for (var j=0;j<m;j++){
+				var number=parseInt(Math.random()*n);
+				while (true){
+					if(aa(number)){
+						number=parseInt(Math.random()*n);
+					}else {
+						a[j]=number;
+						break;
+					}
+				}
+
+			}
+		}
+	}
+
+});
+
+
+
+
+</script>
+<!-- <script src="js/Luckdraw.js" type="text/javascript"></script> -->
+<!-- <script src="js/suiji.js" type="text/javascript"></script> -->
+
+
+</body>
+</html>
