@@ -1,0 +1,205 @@
+@import 'base.less';
+
+header{
+	padding: 15/@view-base 0;
+	background-color: #fff;
+	box-shadow:0 0 20px rgba(86,138,185,.6);
+	.headwidth{
+		//width: 1024/@view-base;
+		margin: 0 50/@view-base;
+		position: relative;
+		z-index: 20;
+	}
+
+	.logo{
+		vertical-align: middle;
+		display: inline-block;
+		width: 335/@view-base;
+		height: 40/@view-base;
+		background: url('../../img/logo.png') top center no-repeat;
+		//background-size: contain;
+		cursor: pointer;
+
+	}
+	.wen{vertical-align: middle;
+		display: inline-block;
+		color: #568BB9;
+		//padding-left: 40/@view-base;
+		.font-dpr(18px);
+		span{
+			padding-left: 40/@view-base;
+		}
+	}
+	.person{display: inline-block;
+		cursor: pointer;
+		padding-left: 30/@view-base;
+		margin-left: 10/@view-base;
+		padding-right: 10/@view-base;
+		//border-right: 1px solid #fff;
+		//width: 100/@view-base;
+		height: 20/@view-base;
+		background: url('../img/person3.png')  center left no-repeat;
+		//background-size: contain;
+		color: #666;
+		.font-dpr(14px);
+		//cursor: pointer;
+		i{
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+			border-bottom: 8px solid #000;
+			transform:rotate(180deg);
+		}
+		&.on{
+			position: relative;
+			z-index: 30;
+			i{
+				transform:rotate(0deg);
+			}
+			.goout{
+				display: block;
+				position: absolute;
+				bottom:-60/@view-base;
+				right:0;
+				z-index: 200;
+				border-top: 1px dashed #fff;
+				//padding-left: 30/@view-base;
+				width: 110%;
+				height: 20/@view-base;
+				background-color: #333;
+				padding: 10/@view-base 0;
+				color: #fff;
+				text-align: center;
+				.font-dpr(14px);
+				cursor: pointer;
+				em{
+					display: inline-block;
+					width: 16/@view-base;
+					height: 16/@view-base;
+					margin-right: 6/@view-base;
+					background: url('../img/goout.png') center left no-repeat;
+					background-size: contain;
+					transform:translateY(2px);
+				}
+			}
+		}
+	}
+	.xiaoshou{
+		display: inline-block;
+		padding-left: 30/@view-base;
+		margin-left: 10/@view-base;
+		padding-right: 10/@view-base;
+		border-right: 1px solid #fff;
+		height: 20/@view-base;
+		background: url('../img/gouwuche3.png') center left no-repeat;
+		//background-size: contain;
+		color: #568BB9;
+		.font-dpr(14px);
+		cursor: pointer;
+		em{
+			color: #f79435;
+		}
+	}
+	.baojia{
+		display: inline-block;
+		padding-left: 30/@view-base;
+		margin-left: 10/@view-base;
+		padding-right: 10/@view-base;
+		border-right: 1px solid #fff;
+		height: 20/@view-base;
+		background: url('../img/baojia3.png') center left no-repeat;
+		//background-size: contain;
+		color: #568BB9;
+		.font-dpr(14px);
+		cursor: pointer;
+		em{
+			color: #f79435;
+		}
+	}
+	.baoyang{
+		display: inline-block;
+		padding-left: 30/@view-base;
+		margin-left: 10/@view-base;
+		padding-right: 10/@view-base;
+		border-right: 1px solid #F6F6F6;
+		height: 20/@view-base;
+		background: url('../img/baoyang3.png') center left no-repeat;
+		//background-size: contain;
+		color: #568BB9;
+		.font-dpr(14px);
+		cursor: pointer;
+		em{
+			color: #f79435;
+		}
+	}
+	.goout{display: none;}
+	.baojia{display: inline-block;
+		// position: absolute;
+		// top:50%;
+		// right:20/@view-base;
+		// transform:translateY(-50%);
+		padding-left: 30/@view-base;
+		margin-left: 10/@view-base;
+		//padding-right: 10/@view-base;
+		//border-right: 1px solid #fff;
+		//width: 100/@view-base;
+		height: 20/@view-base;
+		background: url('../img/baojia3.png') center left no-repeat;
+		//background-size: contain;
+		color: #568BB9;
+		.font-dpr(14px);
+		cursor: pointer;
+	}
+	.headRight{
+		//float: right;
+		text-align: right;
+		position: absolute;
+		top:50%;
+		right:0/@view-base;
+		transform:translateY(-50%);
+		z-index: 20;
+	}
+}
+
+input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"]{
+        -moz-appearance: textfield;
+    }
+.content{
+	//padding: 0 30/@view-base;
+	//width: 1024/@view-base;
+	margin: 0 50/@view-base;
+}
+@media screen and (min-width: 1400px) { 
+
+	.content,header .headwidth{
+		margin: 0 200/@view-base;
+	}
+}
+.lineTiao{
+  width: 100%;
+  height: 8/@view-base;
+  background-color: #D7DCE8;
+  overflow: hidden;
+  .lineList{
+  	width: 200%;
+  	height: 8/@view-base;
+  	background: url('../img/line.png') repeat-x;
+  	background-size: contain;
+  	//animation:mymove 20s linear infinite;
+  }
+}
+@keyframes mymove {
+	0% {
+		transform: translatex(-50%);
+	}
+
+	100% {
+		transform: translatex(0%);
+	}
+}
